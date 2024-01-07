@@ -93,6 +93,9 @@
                     $_SESSION['message'] = 'Hiba a beküldés során.';
                     $_SESSION['errors'] = $error;
                 }
+                #a session üzenetek rendezésében is kértem egy kis segítséget a chatgpt-től
+                #de ennek ellenére élvezetes feladat volt :)
+                
                 header("Location: felvetel.php"); #ha végzett frissítse az oldalt
             }
         ?>
