@@ -93,7 +93,7 @@
                     $_SESSION['message'] = 'Hiba a beküldés során.';
                     $_SESSION['errors'] = $error;
                 }
-                header("Location: felvetel.php");
+                header("Location: felvetel.php"); #ha végzett frissítse az oldalt
             }
         ?>
     </div>
