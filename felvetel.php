@@ -12,7 +12,7 @@
             require "navigacio.php"; #navigációs menü betöltése
             require_once "Hal.php";
 
-            session_start(); #elindul a session
+            session_start(); #elindul a munkamenet, ami ellenőrzi adatok kitöltését, feltöltésének sikerét
             $error=[]; #hibalista
             
             #hibaüzenet a form felett, feladat szerint bs alertben, ebben minimálisat csaltam a chatgpt-vel, hogy ilyen szépen legyen leírva
