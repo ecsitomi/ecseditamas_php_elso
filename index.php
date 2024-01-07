@@ -23,7 +23,7 @@
                     <th>id</th>
                     <th>Név</th>
                     <th>Súly</th>
-                    <th>Sós vízi?</th>
+                    <th>Sósvízi?</th>
                     <th>Kifogva</th>
                     <th>Megrendelő</th>
                 </tr>

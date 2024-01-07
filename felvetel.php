@@ -36,6 +36,31 @@
                 unset($_SESSION['errors']);
             }
         ?>
+        <!--Form az adatok feltöltéséhez, a szépségben szintén picit csaltam a chatgpt-vel-->
+        <form action="feldolgozas.php" method="post">
+            <div class="form-group">
+                <label for="nev">Név:</label>
+                <input type="text" class="form-control" id="nev" name="nev" required>
+            </div>
+            <div class="form-group">
+                <label for="suly">Súly:</label>
+                <input type="number" step="0.1" class="form-control" id="suly" name="suly" required>
+            </div>
+            <div class="form-group">
+                <label for="so">Só:</label>
+                <input type="checkbox" class="form-check-input" id="so" name="so">
+                <label class="form-check-label" for="so">Sósvízi?</label>
+            </div>
+            <div class="form-group">
+                <label for="kifogva">Kifogva:</label>
+                <input type="date" class="form-control" id="kifogva" name="kifogva" required>
+            </div>
+            <div class="form-group">
+                <label for="megrendelo">Megrendelő:</label>
+                <input type="email" class="form-control" id="megrendelo" name="megrendelo" required>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
     </div>
     
 </body>
