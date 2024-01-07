@@ -93,6 +93,7 @@
                     $_SESSION['message'] = 'Hiba a beküldés során.';
                     $_SESSION['errors'] = $error;
                 }
+                header("Location: felvetel.php");
             }
         ?>
     </div>
