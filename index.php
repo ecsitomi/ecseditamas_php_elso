@@ -10,6 +10,8 @@
 <?php
     require_once "bootstrap.php"; #bootstrap beolvasása
     require_once "Hal.php"; #hal osztály beolvasása
+    $datebase=new Hal(); #az új adatbázis a halak osztály szerint
+    $halak=$datebase->getAll(); #lekér minden adatot
 ?>
 
 </body>

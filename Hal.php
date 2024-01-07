@@ -1,35 +1,31 @@
 <?php
 class Hal {
-    private $id; #id
-    private $nev; #str
-    private $suly; #float
-    private $so; #bool
-    private $kifogva; #date
-    private $megrendelo; #email
-
+   
     private $connection;
 
     public function __construct() {
         $this->connection=new mysqli ("localhost","root","","php_elso_dolgozat"); #kapcsolódás az adatbázishoz
     }
 
-    function getAll() {
+    function getAll() { #adatok lekérdezése
         $sql="SELECT*FROM halak";
         $result=$this->connection->query($sql);
         return $result->fetch_all(MSQLI_ASSOC);
     }
 
-    public function __creatRow($id,$nev,$suly,$so,$kifogva,$megrendelo) {
-        $this->id=$id;
-        $this->nev=$nev;
-        $this->suly=$suly;
-        $this->so=$so;
-        $this->kifogva=$kifogva;
-        $this->megrendelo=$megrendelo;
+    public function __create($fishdata) {
+        $sql="INSERT INTO halak (nev,suly,so,kifogva,megrendelo) VALUES (?,?,?,?,?)"; #adatbázis illesztés sql kódja
+        $stmt=$this->connection->prepare(sql); #sql állítás előkészítése
+        #sql php közötti fordítás következik
+        $nev=$fishdata['nev'];
+        $suly=$fishdata['suly'];
+        $so=$fishdata['so'];
+        $kifogva=$fishdata['kifogva'];
+        $megrendelo=$fishdata['megrendelo'];
+        $stmt->bind_param("sssss",$nev,$suly,$so,$kifogva,$megrendelo); #fordított értékek stringként hozzáadva az sql utasításhoz
+        $stmt->execute(); #végrehajtás
     }
 
-    public function __toString() {
-        return "$this->id;$this->nev;$this->suly;$this->so;$this->kifogva;$this->megrendelo";
-    }
+    
 }
 ?>
