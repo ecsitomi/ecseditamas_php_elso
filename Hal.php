@@ -7,7 +7,19 @@ class Hal {
     private $kifogva; #date
     private $megrendelo; #email
 
-    public function __construct($id,$nev,$suly,$so,$kifogva,$megrendelo) {
+    private $connection;
+
+    public function __construct() {
+        $this->connection=new mysqli ("localhost","root","","php_elso_dolgozat"); #kapcsolódás az adatbázishoz
+    }
+
+    function getAll() {
+        $sql="SELECT*FROM halak";
+        $result=$this->connection->query($sql);
+        return $result->fetch_all(MSQLI_ASSOC);
+    }
+
+    public function __creatRow($id,$nev,$suly,$so,$kifogva,$megrendelo) {
         $this->id=$id;
         $this->nev=$nev;
         $this->suly=$suly;

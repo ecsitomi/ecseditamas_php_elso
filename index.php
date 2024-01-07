@@ -8,7 +8,8 @@
 <body>
     
 <?php
-    require_once "Hal.php";
+    require_once "bootstrap.php"; #bootstrap beolvasása
+    require_once "Hal.php"; #hal osztály beolvasása
 ?>
 
 </body>
