@@ -10,12 +10,13 @@ class Hal {
     function getAll() { #adatok lekérdezése
         $sql="SELECT*FROM halak";
         $result=$this->connection->query($sql);
-        return $result->fetch_all(MSQLI_ASSOC);
+        return $result->fetch_all(MYSQLI_ASSOC);
+        
     }
 
     public function __create($fishdata) {
         $sql="INSERT INTO halak (nev,suly,so,kifogva,megrendelo) VALUES (?,?,?,?,?)"; #adatbázis illesztés sql kódja
-        $stmt=$this->connection->prepare(sql); #sql állítás előkészítése
+        $stmt=$this->connection->prepare($sql); #sql állítás előkészítése
         #sql php közötti fordítás következik
         $nev=$fishdata['nev'];
         $suly=$fishdata['suly'];
@@ -26,6 +27,6 @@ class Hal {
         $stmt->execute(); #végrehajtás
     }
 
-    
+
 }
 ?>
